@@ -5,8 +5,6 @@ Rails.application.routes.draw do
     resources :pets, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   end
 
-
-
   devise_scope :user do
      authenticated :user do
        root 'pets#index', as: :authenticated_root
@@ -19,4 +17,6 @@ Rails.application.routes.draw do
 
   get '/api/pets/:id' => 'pets#pet'
   get '/api/owner/:id' => 'pets#owner'
+  get '/api/image/:id' => 'pets#image'
+
 end

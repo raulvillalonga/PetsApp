@@ -10,6 +10,7 @@
     event.preventDefault();
     ajax.execute('/api/pets/' + $(event.currentTarget).attr('data-pet'), loadPetModal);
     ajax.execute('/api/owner/' + $(event.currentTarget).attr('data-pet'), loadOwner);
+    ajax.execute('/api/image/' + $(event.currentTarget).attr('data-pet'), loadImage);
   });
 
   function loadPetModal (data) {
@@ -23,5 +24,8 @@
     $(".js-pet-owner").text(data.name);
   }
 
+  function loadImage (data) {
+    $('.js-pet-image').attr('src',data.url);
+  }
 
 })();

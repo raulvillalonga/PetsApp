@@ -3,20 +3,7 @@ class PetsController < ApplicationController
   before_action :authenticate_user!
 
   def index    
-
       @pets = Pet.all
-
-  end
-
-  def pet
-    pet = Pet.find_by_id(params[:id])
-    render status:200,json:pet
-  end
-
-  def owner
-    pet = Pet.find_by_id(params[:id])
-    owner = pet.user
-    render status:200,json:owner
   end
 
   def new
@@ -62,10 +49,27 @@ class PetsController < ApplicationController
     redirect_to(user_pets_path)
   end
 
+  def pet
+    pet = Pet.find_by_id(params[:id])
+    render status:200,json:pet
+  end
+
+  def owner
+    pet = Pet.find_by_id(params[:id])
+    owner = pet.user
+    render status:200,json:owner
+  end
+
+  def image
+     pet = Pet.find_by_id(params[:id])
+     image_url = pet.image.url
+     render status:200, json:{url:image_url}
+   end
+
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :age, :avatar)
+    params.require(:pet).permit(:name, :species, :age, :image)
   end
 
 end
