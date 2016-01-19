@@ -1,3 +1,50 @@
 // Place all the styles related to the pets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body,html {
+  height: 100%;
+}
+
+header{
+  background-color: #86CF5C;
+  font-size: 16px;
+  height: 75px;
+}
+
+footer{
+  background-color: #86CF5C;
+  font-size: 15px;
+  height: 25px; 
+  text-align: center;
+  color: #3F4C83;
+  padding-top: 2px;
+}
+
+.body-content{
+  min-height: calc(100% - 100px);
+  background:url('/background.jpg') no-repeat center center;
+  background-size:cover;
+  font-size: 18px;
+}
+
+.field{
+  margin-top: 10px;
+}
+
+.form-login{
+  padding-top: 100px;
+}
+
+.modal-content{
+  background:url('/background.jpg') no-repeat center center;
+  font-size: 18px;
+}
+
+.modal-header{
+  background-color: #86CF5C;
+}
+
+.logo, .notices, .nav-bar{
+  margin-top: 10px;
+}

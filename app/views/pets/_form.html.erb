@@ -1,22 +1,45 @@
 
 <section id="pets-form">
-  <%= form_for [@user, @pet] do |f| %>
+  <%= form_for [@user, @pet], html: { class: "form-horizontal" } do |f| %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :species %>
-    <%= f.text_field :species %>
-    <br>
-    <%= f.label :age %>
-    <%= f.number_field :age %>
-    <br>
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-    <br>
-    <%= f.submit 'save' %>
+  <div class="form-group">
+    <%= f.label :name, class:'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+    <%= f.text_field :name, class:'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :species, class:'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+    <%= f.text_field :species, class:'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :age, class:'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+    <%= f.number_field :age, class:'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, class:'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+    <%= f.file_field :image, class:'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'save' , class:'btn btn-primary'%>
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+          <%= link_to('Cancel',user_pets_path) %>
+    </div>
+  </div>
      
-    <%= link_to('Cancel',user_pets_path) %>
+
 
   <% end %>
 </section>
+
+
+
+
